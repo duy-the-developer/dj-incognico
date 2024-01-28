@@ -29,7 +29,6 @@ export const FullscreenVideo = (props: FullScreenVideoProps) => {
       transform: 'perspective(1000px) rotateX(0deg)',
       scrollTrigger: {
         trigger: _ref.current,
-        // markers: true,
         start: 'start center',
         end: 'clamp(center center)',
         scrub: true,
@@ -39,7 +38,6 @@ export const FullscreenVideo = (props: FullScreenVideoProps) => {
     gsap.to(_ref.current, {
       scrollTrigger: {
         trigger: _ref.current,
-        // markers: true,
         start: 'start center',
         end: 'clamp(bottom center)',
         onEnter: () => setPlaying(true),
