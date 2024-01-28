@@ -1,9 +1,24 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Syncopate, Gantari } from 'next/font/google'
 import { Locale, locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
+import { cn } from '@/lib/utils'
+import { Navigation } from '@/components/navigation'
+import { Noise } from '@/components/noise'
+import '@/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const displayFont = Syncopate({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  variable: '--font-display',
+})
+
+const sansFont = Gantari({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+})
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -27,8 +42,16 @@ export default function LocaleLayout({
   unstable_setRequestLocale(locale)
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>{children}</body>
+    <html
+      lang={locale}
+      className={cn(displayFont.variable, sansFont.variable, 'antialiased')}
+      suppressHydrationWarning
+    >
+      <body>
+        <Noise />
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }

@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    --background: 140 9% 32%;
+    --foreground: 146 18% 68%;
 
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
@@ -72,5 +72,50 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .perspective {
+    transform: perspective(1000px) rotateX(5deg);
+  }
+
+  .noise {
+    background-image: url('/images/noise.gif');
+    background-size: 480px;
+    opacity: 0.07;
+    pointer-events: none;
+  }
+
+  .h1,
+  .h2,
+  .h3 {
+    @apply font-display font-bold leading-[0.9];
+  }
+
+  .h4 {
+    @apply leading-[1.1];
+  }
+
+  .h5,
+  .h6 {
+    @apply leading-[1.5];
+  }
+
+  .h1 {
+    @apply text-[8.8vw] tracking-[-0.54vw] lg:text-[6.4vw];
+  }
+  .h2 {
+    @apply text-[6.6vw] tracking-[-0.36vw] lg:text-[4.8vw];
+  }
+  .h3 {
+    @apply text-[4.4vw] tracking-[-0.24vw] lg:text-[3.2vw];
+  }
+  .h4 {
+    @apply lg:text-[2.13vw];
+  }
+  .h5 {
+    @apply text-sm lg:text-[1.422vw];
+  }
+  .h6 {
+    @apply text-[1.222vw] text-xs;
   }
 }
