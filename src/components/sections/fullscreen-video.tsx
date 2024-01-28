@@ -22,7 +22,7 @@ export const FullscreenVideo = () => {
       transform: 'perspective(1000px) rotateX(0deg)',
       scrollTrigger: {
         trigger: _ref.current,
-        markers: true,
+        // markers: true,
         start: 'start center',
         end: 'center center',
         scrub: true,
