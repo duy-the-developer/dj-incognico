@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { FullscreenVideo } from '@/components/sections/fullscreen-video'
+import { VideoGroup } from '@/components/sections/video-group'
 import { Locale } from '@/i18n'
 
 type PageProps = Readonly<{
@@ -12,10 +13,7 @@ export default function Home({ params }: PageProps) {
 
   return (
     <main className="">
-      <FullscreenVideo playing />
-      <FullscreenVideo />
-      <FullscreenVideo />
-      <FullscreenVideo />
+      <VideoGroup />
     </main>
   )
 }
