@@ -1,7 +1,6 @@
 'use client'
-import React, { MutableRefObject, useLayoutEffect } from 'react'
+import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import { useHasMounted } from '@/hooks/useHasMounted'
 import { Container } from '@/components/container'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
