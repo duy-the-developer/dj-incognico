@@ -9,7 +9,12 @@ import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger)
 gsap.defaults({ ease: 'none' })
 
-export const FullscreenVideo = () => {
+type FullScreenVideoProps = {
+  playing?: boolean
+}
+
+export const FullscreenVideo = (props: FullScreenVideoProps) => {
+  const { playing } = props
   const _ref =
     React.useRef<HTMLElement>() as React.MutableRefObject<HTMLElement>
 
@@ -39,7 +44,7 @@ export const FullscreenVideo = () => {
             height="100%"
             controls={true}
             muted={true}
-            playing={true}
+            playing={playing}
           />
         </div>
       </Container>

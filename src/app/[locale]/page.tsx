@@ -12,7 +12,7 @@ export default function Home({ params }: PageProps) {
 
   return (
     <main className="">
-      <FullscreenVideo />
+      <FullscreenVideo playing />
       <FullscreenVideo />
       <FullscreenVideo />
       <FullscreenVideo />
